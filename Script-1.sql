@@ -7,3 +7,5 @@ create table if not exists Albums (id SERIAL primary key, name varchar(80) not n
 create table if not exists Compilations (id SERIAL primary key, name varchar(80) not null, post_year varchar(80));
 
 create table if not exists Tracks (id SERIAL primary key, name varchar(80) not null, duration INTEGER not null, album_id INTEGER not null references Albums(id), compilation_id INTEGER not null references Compilations(id));
+
+create table if not exists Genre_Performer(id SERIAL primary key, name varchar(80) not null, genre_id INTEGER references Genres(id), performer_id INTEGER references Performers(id))
